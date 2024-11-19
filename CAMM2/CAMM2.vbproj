@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BE7EA6F-0954-48F4-8264-40489AECB7CC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CAMM2.My.MyApplication</StartupObject>
+    <RootNamespace>CAMM2</RootNamespace>
+    <AssemblyName>CAMM2</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>CAMM2</ProductName>
+    <PublisherName>Art Poison</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.2.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CAMM2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CAMM2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0C57474EE438D04B1ECD1504F66C6CAC8DCCD10B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CAMM2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HPGL.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Ports.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CAMM2_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\CADImport.AlignConverter.datasource" />
+    <None Include="My Project\DataSources\CADImport.AssemblyVersion.datasource" />
+    <None Include="My Project\DataSources\CADImport.CAD2DPoint.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADCameraBase.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADConst.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADExtrusion.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImage.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportControls.CADEditorControl.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportControls.CADViewerControl.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.AboutForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.BugReportForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.ChangeLanguageEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.ChangeLngPathEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.ChangeOptionsEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.ColorSelector.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.DemoForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.EditorOptions.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.FloatLicForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.LayerForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.OpenFileFromWebForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.OptionsForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.Pattern.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.RegForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.SetRasterSizeForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADImportForms.SHXForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADMath.datasource" />
+    <None Include="My Project\DataSources\CADImport.CADMatrix.datasource" />
+    <None Include="My Project\DataSources\CADImport.CGM.CGMImage.datasource" />
+    <None Include="My Project\DataSources\CADImport.CGM.CGMProgressEvent.datasource" />
+    <None Include="My Project\DataSources\CADImport.ColorTypeConverter.datasource" />
+    <None Include="My Project\DataSources\CADImport.DPoint.datasource" />
+    <None Include="My Project\DataSources\CADImport.DRect.datasource" />
+    <None Include="My Project\DataSources\CADImport.DWG.DWGImage.datasource" />
+    <None Include="My Project\DataSources\CADImport.EndDraw.datasource" />
+    <None Include="My Project\DataSources\CADImport.EndThread.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.CADExport.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.CADToCGM.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.CADToPDF.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.DirectCADtoDXF.CADtoDXF.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.HPGLExport.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DimensionStyle.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFArc.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFBlock.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFData.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFDimension.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFEllipse.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFExport.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFFigure.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFHatch.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFHatchPatternData.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFLayer.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFLine.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFMText.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFPixel.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFPoint.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFPolyBezier.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFPolyline.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFRectangle.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFSolid.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.DXFText.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.Line.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleCADtoDXF.Rect.datasource" />
+    <None Include="My Project\DataSources\CADImport.Export.SimpleExport.datasource" />
+    <None Include="My Project\DataSources\CADImport.Extensions.WinApiModule.BrowseFolderDialogExt.datasource" />
+    <None Include="My Project\DataSources\CADImport.Extensions.WinApiModule.GDIApi.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.CADImportEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.CADImportFace.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.CADListView.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.CADPictureBox.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ClipRect.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.DrawListItemCell.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListCellSelectEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListEventSelectArgs.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListHeader.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListHeaderCollection.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListItem.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListItemCollection.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ListItemSelectEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.MultipleLanguage.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.Orbit3D.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.PenXorDrawing.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.SaveSettings.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ScrollEventArgsExt.datasource" />
+    <None Include="My Project\DataSources\CADImport.FaceModule.ScrollEventHandlerExt.datasource" />
+    <None Include="My Project\DataSources\CADImport.FPoint.datasource" />
+    <None Include="My Project\DataSources\CADImport.GBR.Aperture.datasource" />
+    <None Include="My Project\DataSources\CADImport.GBR.EndGBRProgramEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.GBR.GBRImage.datasource" />
+    <None Include="My Project\DataSources\CADImport.HeadVarStruct.datasource" />
+    <None Include="My Project\DataSources\CADImport.HPGL2.HPGLImage.datasource" />
+    <None Include="My Project\DataSources\CADImport.LayerConverter.datasource" />
+    <None Include="My Project\DataSources\CADImport.LineTypeConverter.datasource" />
+    <None Include="My Project\DataSources\CADImport.LineWeightConverter.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjCircle.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjDimension.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjEllipse.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjEntities.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjEntity.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjHatch.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjImageEnt.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjInsert.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjLayer.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjLine.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjMText.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjPolyline.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjSolid.datasource" />
+    <None Include="My Project\DataSources\CADImport.ObjText.datasource" />
+    <None Include="My Project\DataSources\CADImport.Point3D.datasource" />
+    <None Include="My Project\DataSources\CADImport.Point3DExt.datasource" />
+    <None Include="My Project\DataSources\CADImport.PointValueChange.datasource" />
+    <None Include="My Project\DataSources\CADImport.Printing.PrintingForm.datasource" />
+    <None Include="My Project\DataSources\CADImport.Printing.PrintPreviewControlEx.datasource" />
+    <None Include="My Project\DataSources\CADImport.Professional.CreateNewObjectEventHandler.datasource" />
+    <None Include="My Project\DataSources\CADImport.Professional.EntitiesCreator.datasource" />
+    <None Include="My Project\DataSources\CADImport.Professional.GetRealPointEvent.datasource" />
+    <None Include="My Project\DataSources\CADImport.Protection.datasource" />
+    <None Include="My Project\DataSources\CADImport.RasterImage.CADRasterImage.datasource" />
+    <None Include="My Project\DataSources\CADImport.RECT.datasource" />
+    <None Include="My Project\DataSources\CADImport.Rect2D.datasource" />
+    <None Include="My Project\DataSources\CADImport.SHXFontsParameters.datasource" />
+    <None Include="My Project\DataSources\CADImport.SHXRecord.datasource" />
+    <None Include="My Project\DataSources\CADImport.SHXVertex.datasource" />
+    <None Include="My Project\DataSources\CADImport.Vertex3D.datasource" />
+    <None Include="My Project\DataSources\CADImport.VertexValueChange.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="unlocked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="page_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shape_rotate_anticlockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shape_rotate_clockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zoomin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zoom.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
