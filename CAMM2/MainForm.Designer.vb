@@ -480,6 +480,8 @@ Partial Class MainForm
         '
         Me.XSizeP.Enabled = False
         Me.XSizeP.Location = New System.Drawing.Point(32, 16)
+        Me.XSizeP.DecimalPlaces = 2
+        Me.XSizeP.Increment = 0.1
         Me.XSizeP.Maximum = New Decimal(New Integer() {1215752191, 23, 0, 0})
         Me.XSizeP.Name = "XSizeP"
         Me.XSizeP.Size = New System.Drawing.Size(69, 20)
@@ -489,6 +491,8 @@ Partial Class MainForm
         '
         Me.YSizeP.Enabled = False
         Me.YSizeP.Location = New System.Drawing.Point(32, 49)
+        Me.YSizeP.DecimalPlaces = 2
+        Me.YSizeP.Increment = 0.1
         Me.YSizeP.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.YSizeP.Name = "YSizeP"
         Me.YSizeP.Size = New System.Drawing.Size(69, 20)
