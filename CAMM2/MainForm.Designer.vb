@@ -2,9 +2,9 @@
 Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
-    'Форма переопределяет dispose для очистки списка компонентов.
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
                 components.Dispose()
@@ -67,10 +67,7 @@ Partial Class MainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.ShapeContainer = New PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -411,7 +408,7 @@ Partial Class MainForm
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.ShapeContainer1)
+        Me.GroupBox1.Controls.Add(Me.ShapeContainer)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(10, 10)
@@ -535,39 +532,14 @@ Partial Class MainForm
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Y"
         '
-        'ShapeContainer1
+        'ShapeContainer
         '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(3, 16)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1, Me.LineShape2, Me.LineShape3})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(148, 92)
-        Me.ShapeContainer1.TabIndex = 0
-        Me.ShapeContainer1.TabStop = False
-        '
-        'LineShape1
-        '
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 98
-        Me.LineShape1.X2 = 115
-        Me.LineShape1.Y1 = 9
-        Me.LineShape1.Y2 = 9
-        '
-        'LineShape2
-        '
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = 98
-        Me.LineShape2.X2 = 115
-        Me.LineShape2.Y1 = 43
-        Me.LineShape2.Y2 = 43
-        '
-        'LineShape3
-        '
-        Me.LineShape3.Name = "LineShape3"
-        Me.LineShape3.X1 = 115
-        Me.LineShape3.X2 = 115
-        Me.LineShape3.Y1 = 9
-        Me.LineShape3.Y2 = 43
+        Me.ShapeContainer.Location = New System.Drawing.Point(3, 16)
+        Me.ShapeContainer.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer.Name = "ShapeContainer"
+        Me.ShapeContainer.Size = New System.Drawing.Size(148, 92)
+        Me.ShapeContainer.TabIndex = 0
+        Me.ShapeContainer.TabStop = False
         '
         'Label8
         '
@@ -745,10 +717,7 @@ Partial Class MainForm
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents LineShape3 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Friend WithEvents ShapeContainer As PictureBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents AutoCutP As System.Windows.Forms.CheckBox
     Friend WithEvents SlideP As System.Windows.Forms.RadioButton
