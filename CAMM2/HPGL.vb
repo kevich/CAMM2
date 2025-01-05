@@ -1,4 +1,7 @@
-﻿Module HPGL
+﻿Imports System.ComponentModel
+Imports System.Threading.Tasks
+
+Module HPGL
 
     Dim X As String, Y As String
     Dim XPos As Double, YPos As Double
@@ -20,13 +23,13 @@
     Dim BMP As Bitmap
     Dim G As Graphics
 
-    Public Sub Draw_HPGL(ByVal File As String, ByVal PenOnOff As Boolean, ByVal HPGL_Draw As PictureBox, ByVal PenUp As Boolean)
+    Public Async Function Draw_HPGL(ByVal File As String, ByVal PenOnOff As Boolean, ByVal HPGL_Draw As PictureBox, ByVal PenUp As Boolean) As Threading.Tasks.Task
         'Dim PenColor As Integer
         Dim Command As String
         Dim Parameters As String
         ' Если нет фала EXIT
         If File = "" Then
-            Exit Sub
+            Exit Function
         End If
         'HPGL_Draw.Image.Dispose()        'Очищаем место рисования
         HPGL_Draw.Image = Nothing
@@ -55,7 +58,7 @@
 
 
         While oRead.Peek <> -1
-            LineIn = oRead.ReadLine()
+            LineIn = Await oRead.ReadLineAsync()
             'Pos += LineIn.Length
             MainForm.Progress.Value = oRead.BaseStream.Position
             Command = Left(LineIn, 2)
@@ -75,7 +78,7 @@
 
         HPGL_Draw.Image = BMP
 
-    End Sub
+    End Function
 
     Public Sub GetXYnDraw(ByVal Command As String, ByVal Parameters As String, ByVal PenOnOff As Boolean, ByVal PenUp As Boolean, ByVal HPGL_Draw As PictureBox)
         Dim StrArray() As String = Parameters.Replace(";", "").Split(" ")

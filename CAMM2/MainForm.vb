@@ -45,7 +45,7 @@
         G = Graphics.FromImage(BMP)
     End Sub
 
-    Private Sub OpenHPGL(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ОткрытьToolStripMenuItem.Click, ToolStripButton1.Click
+    Private Async Sub OpenHPGL(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ОткрытьToolStripMenuItem.Click, ToolStripButton1.Click
         Dim Deplace As Boolean = False
         Dim Zoom As Boolean = False
         Dim ActiveZoom As Boolean = False
@@ -70,7 +70,7 @@
 
 
 
-        HPGL.Draw_HPGL(HPGLFile, False, Me.PictureBox1, False)
+        Await HPGL.Draw_HPGL(HPGLFile, False, Me.PictureBox1, False)
 
         'If (HPGL.XMax - HPGL.XMin) < 0 Then
         '    'If (HPGL.XMin) < 0 Then
@@ -102,8 +102,8 @@
         HPGL.YMax = HPGL.YMax + DisplaceY
         HPGL.YMin = HPGL.YMin + DisplaceY
 
-        HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
-
+        'Me.BackgroundWorker1.RunWorkerAsync()
+        Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
 
         PrintButt.Enabled = True
         GabBatt.Enabled = True
@@ -113,21 +113,21 @@
 
 
 
-    Private Sub Form1_SizeChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Resize
+    Private Async Sub Form1_SizeChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Resize
         'BMP = New Bitmap(PictureBox1.Size.Height, PictureBox1.Size.Width)
         PictureBox1.Width = CInt(SplitContainer1.Panel1.Width * Zoom)
         PictureBox1.Height = CInt(SplitContainer1.Panel1.Height * Zoom)
         BMP = New Bitmap(CInt(SplitContainer1.Panel1.Width * Zoom), CInt(SplitContainer1.Panel1.Height * Zoom))
         G = Graphics.FromImage(BMP)
-        HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
+        Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
     End Sub
 
     Private Sub Print_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrintButt.Click, ПечатьToolStripMenuItem.Click
         HPGL.CAMM_Draw(HPGLFile)
     End Sub
 
-    Private Sub showPU_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles showPU.Click
-        HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
+    Private Async Sub showPU_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles showPU.Click
+        Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
     End Sub
 
 
@@ -221,7 +221,7 @@
         WritePrivateProfileString("Parameters", "Port", Port, Application.StartupPath + "/camm2.ini")
     End Sub
 
-    Private Sub XSizeP_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XSizeP.ValueChanged
+    Private Async Sub XSizeP_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XSizeP.ValueChanged
         If Not Drawing Then
             If Not Rotating Then
                 XScale = XSizeP.Value / ((XMax - XMin) / 40)
@@ -231,15 +231,15 @@
                 End If
                 XScaleP.Text = "XScale: " & XScale.ToString("0.00")
                 YScaleP.Text = "YScale: " & YScale.ToString("0.00")
-                HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
+                Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
             End If
         End If
-        
 
-       
+
+
     End Sub
 
-    Private Sub YSizeP_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles YSizeP.ValueChanged
+    Private Async Sub YSizeP_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles YSizeP.ValueChanged
         If Not Drawing Then
             If Not Rotating Then
                 YScale = YSizeP.Value / ((YMax - YMin) / 40)
@@ -249,10 +249,10 @@
                 End If
                 XScaleP.Text = "XScale: " & XScale.ToString("0.00")
                 YScaleP.Text = "YScale: " & YScale.ToString("0.00")
-                HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
+                Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
             End If
         End If
-      
+
 
     End Sub
 
@@ -280,7 +280,7 @@
             WritePrivateProfileString("Parameters", "Speed", Speed, Application.StartupPath + "/camm2.ini")
     End Sub
 
-    Private Sub RotateP_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RotateP.SelectedIndexChanged
+    Private Async Sub RotateP_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RotateP.SelectedIndexChanged
         XScale = 1
         YScale = 1
         Rotating = True
@@ -294,7 +294,7 @@
         Rotating = False
         XScaleP.Text = "XScale: " & XScale.ToString("0.00")
         YScaleP.Text = "YScale: " & YScale.ToString("0.00")
-        HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
+        Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
     End Sub
 
     Private Sub Rotate_Right(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RotRight.Click
@@ -337,13 +337,13 @@
         ZoomBar.Value = Zoom
     End Sub
 
-    Private Sub ZoomBar_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ZoomBar.ValueChanged
+    Private Async Sub ZoomBar_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ZoomBar.ValueChanged
         Zoom = ZoomBar.Value
         If Zoom <> 1 Then
             PictureBox1.Dock = DockStyle.None
         Else
             PictureBox1.Dock = DockStyle.Fill
         End If
-        HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
+        Await HPGL.Draw_HPGL(HPGLFile, True, Me.PictureBox1, showPU.Checked)
     End Sub
 End Class
